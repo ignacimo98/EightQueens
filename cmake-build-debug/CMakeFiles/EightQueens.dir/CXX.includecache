@@ -17,6 +17,10 @@ SFML/Audio.hpp
 -
 iostream
 -
+screen.h
+/home/jimena/Documentos/EightQueens/screen.h
+solver.h
+/home/jimena/Documentos/EightQueens/solver.h
 
 /home/jimena/Documentos/EightQueens/main.cpp
 iostream
@@ -25,6 +29,32 @@ solver.h
 /home/jimena/Documentos/EightQueens/solver.h
 SFML/Graphics.hpp
 -
+GUIManager.h
+/home/jimena/Documentos/EightQueens/GUIManager.h
+screens.h
+/home/jimena/Documentos/EightQueens/screens.h
+
+/home/jimena/Documentos/EightQueens/menu.cpp
+iostream
+-
+menu.h
+/home/jimena/Documentos/EightQueens/menu.h
+
+/home/jimena/Documentos/EightQueens/menu.h
+screen.h
+/home/jimena/Documentos/EightQueens/screen.h
+string
+/home/jimena/Documentos/EightQueens/string
+
+/home/jimena/Documentos/EightQueens/screen.h
+SFML/Graphics.hpp
+-
+
+/home/jimena/Documentos/EightQueens/screens.h
+screen.h
+/home/jimena/Documentos/EightQueens/screen.h
+menu.h
+/home/jimena/Documentos/EightQueens/menu.h
 GUIManager.h
 /home/jimena/Documentos/EightQueens/GUIManager.h
 

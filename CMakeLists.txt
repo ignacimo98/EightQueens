@@ -3,7 +3,7 @@ project(EightQueens)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp solver.cpp solver.h GUIManager.h GUIManager.cpp)
+set(SOURCE_FILES main.cpp solver.cpp solver.h GUIManager.h GUIManager.cpp screens.h screen.h menu.h menu.cpp)
 set(EXECUTABLE_NAME "EightQueens")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 

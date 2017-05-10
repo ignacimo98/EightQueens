@@ -93,6 +93,18 @@
 		<Unit filename="/home/jimena/Documentos/EightQueens/main.cpp">
 			<Option target="EightQueens"/>
 		</Unit>
+		<Unit filename="/home/jimena/Documentos/EightQueens/menu.cpp">
+			<Option target="EightQueens"/>
+		</Unit>
+		<Unit filename="/home/jimena/Documentos/EightQueens/menu.h">
+			<Option target="EightQueens"/>
+		</Unit>
+		<Unit filename="/home/jimena/Documentos/EightQueens/screen.h">
+			<Option target="EightQueens"/>
+		</Unit>
+		<Unit filename="/home/jimena/Documentos/EightQueens/screens.h">
+			<Option target="EightQueens"/>
+		</Unit>
 		<Unit filename="/home/jimena/Documentos/EightQueens/solver.cpp">
 			<Option target="EightQueens"/>
 		</Unit>

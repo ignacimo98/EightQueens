@@ -13,8 +13,6 @@ public:
     Solver();
     void printBoard();
     void solve8Queens();
-
-private:
     int board[8][8] = {{0,0,0,0,0,0,0,0},
                        {0,0,0,0,0,0,0,0},
                        {0,0,0,0,0,0,0,0},
@@ -23,6 +21,9 @@ private:
                        {0,0,0,0,0,0,0,0},
                        {0,0,0,0,0,0,0,0},
                        {0,0,0,0,0,0,0,0}};
+
+private:
+
     bool isSafe(int board[8][8], int row, int col);
     bool solve8QueensAux(int board[8][8], int col);
 };
