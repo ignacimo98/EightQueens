@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jimena/Documentos/EightQueens/GUIManager.cpp
+GUIManager.h
+/home/jimena/Documentos/EightQueens/GUIManager.h
+
+/home/jimena/Documentos/EightQueens/GUIManager.h
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+iostream
+-
+
+/home/jimena/Documentos/EightQueens/main.cpp
+iostream
+-
+solver.h
+/home/jimena/Documentos/EightQueens/solver.h
+SFML/Graphics.hpp
+-
+GUIManager.h
+/home/jimena/Documentos/EightQueens/GUIManager.h
+
+/home/jimena/Documentos/EightQueens/solver.cpp
+solver.h
+/home/jimena/Documentos/EightQueens/solver.h
+
+/home/jimena/Documentos/EightQueens/solver.h
+iostream
+-
+
