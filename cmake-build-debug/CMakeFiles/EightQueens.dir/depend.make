@@ -4,7 +4,11 @@
 CMakeFiles/EightQueens.dir/GUIManager.cpp.o: ../GUIManager.cpp
 CMakeFiles/EightQueens.dir/GUIManager.cpp.o: ../GUIManager.h
 
+CMakeFiles/EightQueens.dir/Serial.cpp.o: ../Serial.cpp
+CMakeFiles/EightQueens.dir/Serial.cpp.o: ../Serial.h
+
 CMakeFiles/EightQueens.dir/main.cpp.o: ../GUIManager.h
+CMakeFiles/EightQueens.dir/main.cpp.o: ../Serial.h
 CMakeFiles/EightQueens.dir/main.cpp.o: ../main.cpp
 CMakeFiles/EightQueens.dir/main.cpp.o: ../solver.h
 

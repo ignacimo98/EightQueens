@@ -2,10 +2,32 @@
 
 #include "solver.h"
 #include <SFML/Graphics.hpp>
+#include <zconf.h>
 #include "GUIManager.h"
 
+#include "Serial.h"
 
+using namespace std;
 int main() {
+
+    Serial* Arduino = new Serial();
+
+
+    while( Arduino->isConnected() ) {
+        char palabra[] = "geekytheory";
+
+        cout << "Arduino conectado" << endl;
+
+//        Arduino->writeData(palabra, sizeof(palabra) - 1);
+
+        usleep(500000);
+
+        Arduino->readData();
+
+
+        cout << "-------------------" << endl;
+        usleep(1000);
+    }
 
    /* Solver solver;
     solver.solve8Queens();
