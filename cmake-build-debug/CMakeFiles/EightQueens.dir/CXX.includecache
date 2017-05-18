@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/jimena/Documentos/EightQueens/GUIManager.cpp
+/Users/nachomora/CLionProjects/EightQueens/GUIManager.cpp
 GUIManager.h
-/home/jimena/Documentos/EightQueens/GUIManager.h
+/Users/nachomora/CLionProjects/EightQueens/GUIManager.h
 
-/home/jimena/Documentos/EightQueens/GUIManager.h
+/Users/nachomora/CLionProjects/EightQueens/GUIManager.h
 SFML/Graphics.hpp
 -
 SFML/Audio.hpp
@@ -18,21 +18,47 @@ SFML/Audio.hpp
 iostream
 -
 
-/home/jimena/Documentos/EightQueens/main.cpp
+/Users/nachomora/CLionProjects/EightQueens/Serial.cpp
+cstring
+-
+fcntl.h
+-
+iostream
+-
+sys/termios.h
+-
+zconf.h
+-
+Serial.h
+/Users/nachomora/CLionProjects/EightQueens/Serial.h
+
+/Users/nachomora/CLionProjects/EightQueens/Serial.h
+cstring
+-
+string
+-
+fstream
+-
+
+/Users/nachomora/CLionProjects/EightQueens/main.cpp
 iostream
 -
 solver.h
-/home/jimena/Documentos/EightQueens/solver.h
+/Users/nachomora/CLionProjects/EightQueens/solver.h
 SFML/Graphics.hpp
 -
+zconf.h
+-
 GUIManager.h
-/home/jimena/Documentos/EightQueens/GUIManager.h
+/Users/nachomora/CLionProjects/EightQueens/GUIManager.h
+Serial.h
+/Users/nachomora/CLionProjects/EightQueens/Serial.h
 
-/home/jimena/Documentos/EightQueens/solver.cpp
+/Users/nachomora/CLionProjects/EightQueens/solver.cpp
 solver.h
-/home/jimena/Documentos/EightQueens/solver.h
+/Users/nachomora/CLionProjects/EightQueens/solver.h
 
-/home/jimena/Documentos/EightQueens/solver.h
+/Users/nachomora/CLionProjects/EightQueens/solver.h
 iostream
 -
 

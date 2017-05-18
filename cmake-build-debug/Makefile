@@ -39,38 +39,27 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jimena/clion-2017.1.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = "/Users/nachomora/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/CLion.app/Contents/bin/cmake/bin/cmake"
 
 # The command to remove a file.
-RM = /home/jimena/clion-2017.1.1/bin/cmake/bin/cmake -E remove -f
+RM = "/Users/nachomora/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/CLion.app/Contents/bin/cmake/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jimena/Documentos/EightQueens
+CMAKE_SOURCE_DIR = /Users/nachomora/CLionProjects/EightQueens
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jimena/Documentos/EightQueens/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/jimena/clion-2017.1.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/jimena/clion-2017.1.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"/Users/nachomora/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/CLion.app/Contents/bin/cmake/bin/cmake" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"/Users/nachomora/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/CLion.app/Contents/bin/cmake/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles /home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ GUIManager.cpp.s:
 	$(MAKE) -f CMakeFiles/EightQueens.dir/build.make CMakeFiles/EightQueens.dir/GUIManager.cpp.s
 .PHONY : GUIManager.cpp.s
 
+Serial.o: Serial.cpp.o
+
+.PHONY : Serial.o
+
+# target to build an object file
+Serial.cpp.o:
+	$(MAKE) -f CMakeFiles/EightQueens.dir/build.make CMakeFiles/EightQueens.dir/Serial.cpp.o
+.PHONY : Serial.cpp.o
+
+Serial.i: Serial.cpp.i
+
+.PHONY : Serial.i
+
+# target to preprocess a source file
+Serial.cpp.i:
+	$(MAKE) -f CMakeFiles/EightQueens.dir/build.make CMakeFiles/EightQueens.dir/Serial.cpp.i
+.PHONY : Serial.cpp.i
+
+Serial.s: Serial.cpp.s
+
+.PHONY : Serial.s
+
+# target to generate assembly for a file
+Serial.cpp.s:
+	$(MAKE) -f CMakeFiles/EightQueens.dir/build.make CMakeFiles/EightQueens.dir/Serial.cpp.s
+.PHONY : Serial.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -210,12 +237,15 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... EightQueens"
 	@echo "... GUIManager.o"
 	@echo "... GUIManager.i"
 	@echo "... GUIManager.s"
+	@echo "... Serial.o"
+	@echo "... Serial.i"
+	@echo "... Serial.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

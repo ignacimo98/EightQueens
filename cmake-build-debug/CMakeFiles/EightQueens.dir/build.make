@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jimena/clion-2017.1.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = "/Users/nachomora/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/CLion.app/Contents/bin/cmake/bin/cmake"
 
 # The command to remove a file.
-RM = /home/jimena/clion-2017.1.1/bin/cmake/bin/cmake -E remove -f
+RM = "/Users/nachomora/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/CLion.app/Contents/bin/cmake/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jimena/Documentos/EightQueens
+CMAKE_SOURCE_DIR = /Users/nachomora/CLionProjects/EightQueens
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jimena/Documentos/EightQueens/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/EightQueens.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/EightQueens.dir/flags.make
 
 CMakeFiles/EightQueens.dir/main.cpp.o: CMakeFiles/EightQueens.dir/flags.make
 CMakeFiles/EightQueens.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/EightQueens.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/EightQueens.dir/main.cpp.o -c /home/jimena/Documentos/EightQueens/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/EightQueens.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/EightQueens.dir/main.cpp.o -c /Users/nachomora/CLionProjects/EightQueens/main.cpp
 
 CMakeFiles/EightQueens.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EightQueens.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimena/Documentos/EightQueens/main.cpp > CMakeFiles/EightQueens.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nachomora/CLionProjects/EightQueens/main.cpp > CMakeFiles/EightQueens.dir/main.cpp.i
 
 CMakeFiles/EightQueens.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EightQueens.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimena/Documentos/EightQueens/main.cpp -o CMakeFiles/EightQueens.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nachomora/CLionProjects/EightQueens/main.cpp -o CMakeFiles/EightQueens.dir/main.cpp.s
 
 CMakeFiles/EightQueens.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/EightQueens.dir/main.cpp.o.provides.build: CMakeFiles/EightQueens.dir
 
 CMakeFiles/EightQueens.dir/solver.cpp.o: CMakeFiles/EightQueens.dir/flags.make
 CMakeFiles/EightQueens.dir/solver.cpp.o: ../solver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/EightQueens.dir/solver.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/EightQueens.dir/solver.cpp.o -c /home/jimena/Documentos/EightQueens/solver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/EightQueens.dir/solver.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/EightQueens.dir/solver.cpp.o -c /Users/nachomora/CLionProjects/EightQueens/solver.cpp
 
 CMakeFiles/EightQueens.dir/solver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EightQueens.dir/solver.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimena/Documentos/EightQueens/solver.cpp > CMakeFiles/EightQueens.dir/solver.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nachomora/CLionProjects/EightQueens/solver.cpp > CMakeFiles/EightQueens.dir/solver.cpp.i
 
 CMakeFiles/EightQueens.dir/solver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EightQueens.dir/solver.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimena/Documentos/EightQueens/solver.cpp -o CMakeFiles/EightQueens.dir/solver.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nachomora/CLionProjects/EightQueens/solver.cpp -o CMakeFiles/EightQueens.dir/solver.cpp.s
 
 CMakeFiles/EightQueens.dir/solver.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/EightQueens.dir/solver.cpp.o.provides.build: CMakeFiles/EightQueens.d
 
 CMakeFiles/EightQueens.dir/GUIManager.cpp.o: CMakeFiles/EightQueens.dir/flags.make
 CMakeFiles/EightQueens.dir/GUIManager.cpp.o: ../GUIManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/EightQueens.dir/GUIManager.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/EightQueens.dir/GUIManager.cpp.o -c /home/jimena/Documentos/EightQueens/GUIManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/EightQueens.dir/GUIManager.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/EightQueens.dir/GUIManager.cpp.o -c /Users/nachomora/CLionProjects/EightQueens/GUIManager.cpp
 
 CMakeFiles/EightQueens.dir/GUIManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EightQueens.dir/GUIManager.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimena/Documentos/EightQueens/GUIManager.cpp > CMakeFiles/EightQueens.dir/GUIManager.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nachomora/CLionProjects/EightQueens/GUIManager.cpp > CMakeFiles/EightQueens.dir/GUIManager.cpp.i
 
 CMakeFiles/EightQueens.dir/GUIManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EightQueens.dir/GUIManager.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimena/Documentos/EightQueens/GUIManager.cpp -o CMakeFiles/EightQueens.dir/GUIManager.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nachomora/CLionProjects/EightQueens/GUIManager.cpp -o CMakeFiles/EightQueens.dir/GUIManager.cpp.s
 
 CMakeFiles/EightQueens.dir/GUIManager.cpp.o.requires:
 
@@ -129,11 +129,36 @@ CMakeFiles/EightQueens.dir/GUIManager.cpp.o.provides: CMakeFiles/EightQueens.dir
 CMakeFiles/EightQueens.dir/GUIManager.cpp.o.provides.build: CMakeFiles/EightQueens.dir/GUIManager.cpp.o
 
 
+CMakeFiles/EightQueens.dir/Serial.cpp.o: CMakeFiles/EightQueens.dir/flags.make
+CMakeFiles/EightQueens.dir/Serial.cpp.o: ../Serial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EightQueens.dir/Serial.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/EightQueens.dir/Serial.cpp.o -c /Users/nachomora/CLionProjects/EightQueens/Serial.cpp
+
+CMakeFiles/EightQueens.dir/Serial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EightQueens.dir/Serial.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nachomora/CLionProjects/EightQueens/Serial.cpp > CMakeFiles/EightQueens.dir/Serial.cpp.i
+
+CMakeFiles/EightQueens.dir/Serial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EightQueens.dir/Serial.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nachomora/CLionProjects/EightQueens/Serial.cpp -o CMakeFiles/EightQueens.dir/Serial.cpp.s
+
+CMakeFiles/EightQueens.dir/Serial.cpp.o.requires:
+
+.PHONY : CMakeFiles/EightQueens.dir/Serial.cpp.o.requires
+
+CMakeFiles/EightQueens.dir/Serial.cpp.o.provides: CMakeFiles/EightQueens.dir/Serial.cpp.o.requires
+	$(MAKE) -f CMakeFiles/EightQueens.dir/build.make CMakeFiles/EightQueens.dir/Serial.cpp.o.provides.build
+.PHONY : CMakeFiles/EightQueens.dir/Serial.cpp.o.provides
+
+CMakeFiles/EightQueens.dir/Serial.cpp.o.provides.build: CMakeFiles/EightQueens.dir/Serial.cpp.o
+
+
 # Object files for target EightQueens
 EightQueens_OBJECTS = \
 "CMakeFiles/EightQueens.dir/main.cpp.o" \
 "CMakeFiles/EightQueens.dir/solver.cpp.o" \
-"CMakeFiles/EightQueens.dir/GUIManager.cpp.o"
+"CMakeFiles/EightQueens.dir/GUIManager.cpp.o" \
+"CMakeFiles/EightQueens.dir/Serial.cpp.o"
 
 # External object files for target EightQueens
 EightQueens_EXTERNAL_OBJECTS =
@@ -141,14 +166,10 @@ EightQueens_EXTERNAL_OBJECTS =
 ../bin/EightQueens: CMakeFiles/EightQueens.dir/main.cpp.o
 ../bin/EightQueens: CMakeFiles/EightQueens.dir/solver.cpp.o
 ../bin/EightQueens: CMakeFiles/EightQueens.dir/GUIManager.cpp.o
+../bin/EightQueens: CMakeFiles/EightQueens.dir/Serial.cpp.o
 ../bin/EightQueens: CMakeFiles/EightQueens.dir/build.make
-../bin/EightQueens: /usr/lib/x86_64-linux-gnu/libsfml-system.so
-../bin/EightQueens: /usr/lib/x86_64-linux-gnu/libsfml-window.so
-../bin/EightQueens: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
-../bin/EightQueens: /usr/lib/x86_64-linux-gnu/libsfml-network.so
-../bin/EightQueens: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 ../bin/EightQueens: CMakeFiles/EightQueens.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/EightQueens"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/EightQueens"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EightQueens.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -159,6 +180,7 @@ CMakeFiles/EightQueens.dir/build: ../bin/EightQueens
 CMakeFiles/EightQueens.dir/requires: CMakeFiles/EightQueens.dir/main.cpp.o.requires
 CMakeFiles/EightQueens.dir/requires: CMakeFiles/EightQueens.dir/solver.cpp.o.requires
 CMakeFiles/EightQueens.dir/requires: CMakeFiles/EightQueens.dir/GUIManager.cpp.o.requires
+CMakeFiles/EightQueens.dir/requires: CMakeFiles/EightQueens.dir/Serial.cpp.o.requires
 
 .PHONY : CMakeFiles/EightQueens.dir/requires
 
@@ -167,6 +189,6 @@ CMakeFiles/EightQueens.dir/clean:
 .PHONY : CMakeFiles/EightQueens.dir/clean
 
 CMakeFiles/EightQueens.dir/depend:
-	cd /home/jimena/Documentos/EightQueens/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jimena/Documentos/EightQueens /home/jimena/Documentos/EightQueens /home/jimena/Documentos/EightQueens/cmake-build-debug /home/jimena/Documentos/EightQueens/cmake-build-debug /home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles/EightQueens.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/nachomora/CLionProjects/EightQueens /Users/nachomora/CLionProjects/EightQueens /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug/CMakeFiles/EightQueens.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/EightQueens.dir/depend
 
