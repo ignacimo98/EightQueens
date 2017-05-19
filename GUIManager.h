@@ -14,9 +14,16 @@
 class GUIManager : public screen{
 public:
     GUIManager();
+    ~GUIManager();
     int run(sf::RenderWindow &window);
+    void moveQueens(sf::RenderWindow &window);
     void drawQueens(sf::RenderWindow &window);
-    void solve8Queens();
+    void createQueens();
+
+    void solve8Queens(sf::RenderWindow &window);
+    bool isSafe(int board[8][8], int row, int col);
+    bool solve8QueensAux(int board[8][8], int col, sf::RenderWindow &window);
+
     bool running = true;
     bool move_made = true;
 

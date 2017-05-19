@@ -1,10 +1,13 @@
 //
 // Created by jimena on 09/05/17.
 //
+#include <zconf.h>
+#include <fstream>
 #include "GUIManager.h"
 
 GUIManager::GUIManager() {
     std::cout<<"GUI Created"<<std::endl;
+
     backgroundTexture.loadFromFile("Resources/Background1.jpeg");
     backgroundSprite.setTexture(backgroundTexture);
     backgroundSprite.setPosition(0,0);
@@ -23,55 +26,47 @@ GUIManager::GUIManager() {
     titleLabel.setString("The Eight Queens' Problem");
     titleLabel.setPosition(50,50);
     titleLabel.setStyle(sf::Text::Italic);
+
+    createQueens();
 }
 
 
 int GUIManager::run(sf::RenderWindow &window) {
-    solve8Queens();
+    solve8Queens(window);
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape){
+                int i, j;
+                for (i = 0; i < 8; i++){
+                    queens[i].setPosition(-80,-80);
+                    for (j = 0; j < 8; j++){
+                        board[i][j] =0;
+                    }
+                }
                 return 0;
+            }
         }
-        window.clear();
-
-
-
-        window.draw(backgroundSprite);
-        window.draw(chessBoardSprite);
-        window.draw(titleLabel);
-
-        if(move_made) {
-            drawQueens(window);
-            move_made = false;
-        }
-        for(int i = 0; i<queens.size(); i++){
-            window.draw(queens[i]);
-        }
-
-        window.display();
     }
     return 4;
 }
 
-void GUIManager::drawQueens(sf::RenderWindow &window){
+void GUIManager::moveQueens(sf::RenderWindow &window){
+    int counter =0;
     for(int i = 0; i<8;i++){
         for(int j = 0; j<8;j++){
             if(board[i][j] == 1){
-                sf::Sprite miniQueenSprite;
-                std::cout<<"holi"<<std::endl;
-                miniQueenSprite.setTexture(miniQueenTexture);
-                miniQueenSprite.setPosition(j*74+500, i*74+160);
-                queens.push_back(miniQueenSprite);
+                queens[counter].setPosition(j*74+500, i*74+160);
+                counter++;
             }
         }
     }
+    drawQueens(window);
 }
 
-bool isSafe(int board[8][8], int row, int col) {
+bool GUIManager::isSafe(int board[8][8], int row, int col) {
     int i, j;
 
     for (i = 0; i < col; i++)
@@ -90,30 +85,74 @@ bool isSafe(int board[8][8], int row, int col) {
 
 }
 
-bool solve8QueensAux(int board[8][8], int col) {
+void printBoard(int board[8][8]){
+    int i, j;
+
+    for (i = 0; i < 8; i++){
+        for (j = 0; j < 8; j++){
+            std::cout << board[i][j] << " ";
+        }
+        std::cout << std:: endl;
+    }
+}
+
+void writeBoard(){
+
+}
+
+bool GUIManager::solve8QueensAux(int board[8][8], int col, sf::RenderWindow &window) {
     if (col >= 8)
         return true;
-
     int i;
-
     for (i = 0; i < 8; i++){
         if (isSafe(board, i, col)){
             board[i][col] = 1;
-
-            if (solve8QueensAux(board, col + 1))
+            printBoard(board);////meter vara de escribir el archivo
+            moveQueens(window);
+            usleep(250000);
+            std::cout <<"nuevo movimiento"<<std::endl;
+            if (solve8QueensAux(board, col + 1, window))
                 return true;
 
             board[i][col] = 0;
+
         }
     }
 
     return false;
 }
 
-void GUIManager::solve8Queens(){
 
-    if (solve8QueensAux(board, 0) == false){
+void GUIManager::solve8Queens(sf::RenderWindow &window){
+
+    if (solve8QueensAux(board, 0, window) == false){
         std::cout << "There's no solution";
     }
+
+}
+
+void GUIManager::createQueens() {
+    for(int i = 0; i<8; i++){
+        sf::Sprite miniQueenSprite;
+        miniQueenSprite.setTexture(miniQueenTexture);
+        miniQueenSprite.setPosition(-80,-80);
+        queens.push_back(miniQueenSprite);
+    }
+}
+
+void GUIManager::drawQueens(sf::RenderWindow &window) {
+    window.clear();
+    window.draw(backgroundSprite);
+    window.draw(chessBoardSprite);
+    window.draw(titleLabel);
+
+    for(int i = 0; i<queens.size(); i++){
+        window.draw(queens[i]);
+    }
+
+    window.display();
+}
+
+GUIManager::~GUIManager() {
 
 }
