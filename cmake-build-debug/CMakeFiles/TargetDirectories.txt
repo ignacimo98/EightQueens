@@ -1,3 +1,0 @@
-/home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/jimena/Documentos/EightQueens/cmake-build-debug/CMakeFiles/EightQueens.dir
