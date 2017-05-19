@@ -19,6 +19,9 @@ public:
     void moveQueens(sf::RenderWindow &window);
     void drawQueens(sf::RenderWindow &window);
     void createQueens();
+    void writeBoard();
+
+
 
     void solve8Queens(sf::RenderWindow &window);
     bool isSafe(int board[8][8], int row, int col);

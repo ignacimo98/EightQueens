@@ -54,12 +54,18 @@ int GUIManager::run(sf::RenderWindow &window) {
 }
 
 void GUIManager::moveQueens(sf::RenderWindow &window){
+    for(int i = 0; i<8; i++){
+        queens[i].setPosition(-80,-80);
+    }
+    drawQueens(window);
+
     int counter =0;
     for(int i = 0; i<8;i++){
         for(int j = 0; j<8;j++){
             if(board[i][j] == 1){
                 queens[counter].setPosition(j*74+500, i*74+160);
                 counter++;
+                break;
             }
         }
     }
@@ -96,7 +102,16 @@ void printBoard(int board[8][8]){
     }
 }
 
-void writeBoard(){
+void GUIManager::writeBoard(){
+    std::ofstream out;
+    out.open("Movements.txt", std::ios::app);
+    int i, j;
+    for (i = 0; i < 8; i++){
+        for (j = 0; j < 8; j++){
+            out << board[i][j] << " "; }
+        out << std:: endl;
+    }
+    out << std::endl;
 
 }
 
@@ -107,9 +122,10 @@ bool GUIManager::solve8QueensAux(int board[8][8], int col, sf::RenderWindow &win
     for (i = 0; i < 8; i++){
         if (isSafe(board, i, col)){
             board[i][col] = 1;
-            printBoard(board);////meter vara de escribir el archivo
+            printBoard(board);
+            writeBoard();
             moveQueens(window);
-            usleep(250000);
+            usleep(500000);
             std::cout <<"nuevo movimiento"<<std::endl;
             if (solve8QueensAux(board, col + 1, window))
                 return true;
