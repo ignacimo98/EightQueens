@@ -58,7 +58,6 @@ void GUIManager::moveQueens(sf::RenderWindow &window){
         queens[i].setPosition(-80,-80);
     }
     drawQueens(window);
-
     int counter =0;
     for(int i = 0; i<8;i++){
         for(int j = 0; j<8;j++){
@@ -74,11 +73,9 @@ void GUIManager::moveQueens(sf::RenderWindow &window){
 
 bool GUIManager::isSafe(int board[8][8], int row, int col) {
     int i, j;
-
     for (i = 0; i < col; i++)
         if (board[row][i])
             return false;
-
     for (i = row, j = col; i >= 0 && j>= 0; i--, j--)
         if (board[i][j])
             return false;
@@ -87,8 +84,6 @@ bool GUIManager::isSafe(int board[8][8], int row, int col) {
         if (board[i][j])
             return false;
     return true;
-
-
 }
 
 void printBoard(int board[8][8]){
@@ -129,12 +124,9 @@ bool GUIManager::solve8QueensAux(int board[8][8], int col, sf::RenderWindow &win
             std::cout <<"nuevo movimiento"<<std::endl;
             if (solve8QueensAux(board, col + 1, window))
                 return true;
-
             board[i][col] = 0;
-
         }
     }
-
     return false;
 }
 

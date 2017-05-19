@@ -75,7 +75,7 @@ int menu::run(sf::RenderWindow &window) {
             if(event.type == sf::Event::KeyPressed){
                 switch (event.key.code){
                     case sf::Keyboard::Escape:
-                        return 0;
+                        exit(0);
                     case sf::Keyboard::Up:
                         menuNumber--;
                         if(menuNumber<0)
