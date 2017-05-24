@@ -1,5 +1,0 @@
-"/Users/nachomora/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4073.41/CLion.app/Contents/bin/cmake/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/nachomora/CLionProjects/EightQueens
--- Found SFML 2.4.2 in /Library/Frameworks/SFML.framework
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/nachomora/CLionProjects/EightQueens/cmake-build-debug
