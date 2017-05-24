@@ -8,5 +8,5 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 bin/EightQueens
-.idea
-
+.idea/
+cmake-build-debug/
