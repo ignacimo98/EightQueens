@@ -20,6 +20,7 @@ public:
     void drawQueens(sf::RenderWindow &window);
     void createQueens();
     void writeBoard();
+    void checkJaque();
 
 
 
@@ -47,6 +48,7 @@ public:
     sf::Texture backgroundTexture;
     sf::Texture chessBoardTexture;
     sf::Texture miniQueenTexture;
+    sf::Texture miniQueenJaqueTexture;
 
     sf::Sprite chessBoardSprite;
     sf::Sprite backgroundSprite;

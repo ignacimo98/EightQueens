@@ -14,6 +14,7 @@ GUIManager::GUIManager() {
     backgroundSprite.setTextureRect(sf::IntRect(0,0,1400,800));
 
     miniQueenTexture.loadFromFile("Resources/miniqueen.png");
+    miniQueenJaqueTexture.loadFromFile("Resources/miniQueenJaque.png");
 
 
     chessBoardTexture.loadFromFile("Resources/ChessBoard.jpg");
@@ -163,4 +164,18 @@ void GUIManager::drawQueens(sf::RenderWindow &window) {
 
 GUIManager::~GUIManager() {
 
+}
+
+void GUIManager::checkJaque() {
+    for(int i=0; i<8;i++){
+        for(int j=0; j<8; j++){
+            if(i!= j) {
+                ///Chequea diagonal
+                if (abs((int)queens[i].getPosition().y - queens[j].getPosition().y) == abs((int)(queens[i].getPosition().x - queens[j].getPosition().x))){
+                    queens[i].setTexture(miniQueenJaqueTexture);
+                    queens[j].setTexture(miniQueenJaqueTexture);
+                }
+            }
+        }
+    }
 }
