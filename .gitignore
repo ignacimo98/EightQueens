@@ -7,7 +7,9 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
+
 bin/EightQueens
-.idea/
-cmake-build-debug/
+.idea
+cmake-build-debug
 .DS_Store
+

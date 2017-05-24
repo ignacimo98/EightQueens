@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <zconf.h>
 #include "GUIManager.h"
+#include "screens.h"
 
 #include "Serial.h"
 
@@ -33,11 +34,23 @@ int main() {
     solver.solve8Queens();
     solver.printBoard();*/
 
+    std::vector<screen*> screens;
+    int screen =0;
+
     sf::RenderWindow window(sf::VideoMode(1366,768), "EightQueens", sf::Style::Close | sf::Style::Titlebar);
 
-    GUIManager application;
-    application.run(window);
+    menu menuScreen;
+    screens.push_back(&menuScreen);
+
+    GUIManager guiManager;
+    screens.push_back(&guiManager);
+
+    while(screen>=0){
+        screen = screens[screen]->run(window);
+    }
 
 
-    return 0;
+
+
+    return EXIT_SUCCESS;
 }
