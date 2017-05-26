@@ -34,8 +34,10 @@ int main() {
     solver.solve8Queens();
     solver.printBoard();*/
 
+
     std::vector<screen*> screens;
     int screen =0;
+    std::string port;
 
     sf::RenderWindow window(sf::VideoMode(1366,768), "EightQueens", sf::Style::Close | sf::Style::Titlebar);
 
@@ -46,7 +48,7 @@ int main() {
     screens.push_back(&guiManager);
 
     while(screen>=0){
-        screen = screens[screen]->run(window);
+        screen = screens[screen]->run(window, port);
     }
 
 

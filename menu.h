@@ -11,7 +11,8 @@
 class menu : public screen{
 public:
     menu();
-    int run(sf::RenderWindow &window);
+    int run(sf::RenderWindow &window, std::string& port);
+    static std::string port;
 };
 
 #endif //EIGHTQUEENS_MENU_H

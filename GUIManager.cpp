@@ -39,7 +39,9 @@ GUIManager::GUIManager() {
 }
 
 
-int GUIManager::run(sf::RenderWindow &window) {
+int GUIManager::run(sf::RenderWindow &window, std::string& port) {
+    arduinoPort =  port;
+    std::cout <<arduinoPort<<std::endl;
     solve8Queens(window);
     while (window.isOpen()) {
         sf::Event event;
@@ -64,6 +66,7 @@ int GUIManager::run(sf::RenderWindow &window) {
 void GUIManager::moveQueens(sf::RenderWindow &window){
     for(int i = 0; i<8; i++){
         queens[i].setPosition(-80,-80);
+        queens[i].setTexture(miniQueenTexture);
     }
     drawQueens(window);
     int counter =0;
@@ -181,16 +184,4 @@ GUIManager::~GUIManager() {
 
 }
 
-void GUIManager::checkJaque() {
-    for(int i=0; i<8;i++){
-        for(int j=0; j<8; j++){
-            if(i!= j) {
-                ///Chequea diagonal
-                if (abs((int)queens[i].getPosition().y - queens[j].getPosition().y) == abs((int)(queens[i].getPosition().x - queens[j].getPosition().x))){
-                    queens[i].setTexture(miniQueenJaqueTexture);
-                    queens[j].setTexture(miniQueenJaqueTexture);
-                }
-            }
-        }
-    }
-}
+
