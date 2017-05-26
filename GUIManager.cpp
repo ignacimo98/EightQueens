@@ -34,13 +34,14 @@ GUIManager::GUIManager() {
 
     createQueens();
 
-    arduinoManager = new Serial("/dev/cu.usbserial-AL00VOSH");
-    usleep(10000000);
+
 }
 
 
 int GUIManager::run(sf::RenderWindow &window, std::string& port) {
     arduinoPort =  port;
+    arduinoManager = new Serial(arduinoPort);
+    usleep(10000000);
     std::cout <<arduinoPort<<std::endl;
     solve8Queens(window);
     while (window.isOpen()) {
