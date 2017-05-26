@@ -6,7 +6,7 @@
 
 menu::menu() {}
 
-int menu::run(sf::RenderWindow &window) {
+int menu::run(sf::RenderWindow &window, std::string& port) {
     sf::Event event;
 
     sf::Texture backgroundTexture;
@@ -88,6 +88,7 @@ int menu::run(sf::RenderWindow &window) {
                         break;
                     case sf::Keyboard::Return:
                         if(menuNumber==1)
+                            port = comPort;
                             return 1;
                     default:
                         break;
