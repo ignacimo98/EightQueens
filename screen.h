@@ -9,7 +9,7 @@
 
 class screen{
 public:
-    virtual int run (sf::RenderWindow &window) = 0;
+    virtual int run (sf::RenderWindow &window, std::string &port) = 0;
 };
 
 #endif //EIGHTQUEENS_SCREEN_H

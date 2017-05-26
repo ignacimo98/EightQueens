@@ -15,7 +15,7 @@ class GUIManager : public screen{
 public:
     GUIManager();
     ~GUIManager();
-    int run(sf::RenderWindow &window);
+    int run(sf::RenderWindow &window, std::string& port);
     void moveQueens(sf::RenderWindow &window);
     void drawQueens(sf::RenderWindow &window);
     void createQueens();
@@ -45,6 +45,7 @@ public:
     std::vector<sf::Sprite> queens;
 
 
+    std::string arduinoPort;
     sf::Texture backgroundTexture;
     sf::Texture chessBoardTexture;
     sf::Texture miniQueenTexture;
