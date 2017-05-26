@@ -11,24 +11,24 @@
 using namespace std;
 int main() {
 
-    Serial* Arduino = new Serial();
+//    Serial* Arduino = new Serial();
 
 
-    while( Arduino->isConnected() ) {
-        char palabra[] = "geekytheory";
-
-        cout << "Arduino conectado" << endl;
-
+//    while( Arduino->isConnected() ) {
+//        char palabra[] = "geekytheory";
+//
+//        cout << "Arduino conectado" << endl;
+//
 //        Arduino->writeData(palabra, sizeof(palabra) - 1);
-
-        usleep(500000);
-
-        Arduino->readData();
-
-
-        cout << "-------------------" << endl;
-        usleep(1000);
-    }
+//
+//        usleep(500000);
+//
+//        Arduino->readData();
+//
+//
+//        cout << "-------------------" << endl;
+//        usleep(1000);
+//    }
 
    /* Solver solver;
     solver.solve8Queens();

@@ -9,10 +9,10 @@
 #include <zconf.h>
 #include "Serial.h"
 
-Serial::Serial() {
+Serial::Serial(std::string COM) {
     connected = false;
 
-    USB = open("/dev/cu.usbserial-AL00VOSH", O_RDWR| O_NOCTTY | O_NDELAY);
+    USB = open(COM.c_str(), O_RDWR| O_NOCTTY | O_NDELAY);
 
 
     struct termios tty;
@@ -57,9 +57,11 @@ Serial::Serial() {
 
 }
 
-void Serial::writeData(std::string data, int largo) {
+int Serial::writeData(std::string data, int largo) {
 
     int n_written = write( USB, data.c_str(), largo);
+
+    return n_written;
 
 }
 
@@ -96,4 +98,57 @@ void Serial::readData() {
 
 bool Serial::isConnected() {
     return connected;
+}
+
+void Serial::turnOff(int row, int col) {
+    int ledNumber = row * 8 + col;
+
+    char toSend[3];
+
+    if(ledNumber<10)
+        sprintf(toSend, "A0%d", ledNumber);
+    else if (ledNumber >= 10 )
+        sprintf(toSend, "A%d", ledNumber);
+
+    writeData(toSend, 3);
+}
+
+void Serial::turnOn(int row, int col, char color) {
+    int ledNumber = row * 8 + col;
+
+    char toSend[4];
+
+    if(ledNumber<10)
+        sprintf(toSend, "E%c0%d", color, ledNumber);
+    else if (ledNumber >= 10 )
+        sprintf(toSend, "E%c%d", color, ledNumber);
+
+    writeData(toSend, 4);
+
+}
+
+void Serial::lightBoard(Board *board) {
+    std::string toSend;
+    int i,j;
+    int leds = 0;
+    for (i = 0; i < 8; i++){
+        for (j = 0; j < 8; j++){
+            if (board->hasQueen(i,j)){
+                int ledNumber = i * 8 + j;
+                if (ledNumber < 10)
+                    toSend.append("0");
+                toSend.append(std::to_string(ledNumber));
+                leds++;
+            }
+        }
+    }
+
+    for (leds; leds < 8; leds++){
+        toSend.append("--");
+    }
+
+
+    std::cout << writeData(toSend,toSend.size()) << std::endl;
+    std::cout << toSend << std::endl;
+
 }

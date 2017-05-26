@@ -1,12 +1,15 @@
 //
-// Created by jimena on 09/05/17.
+// Created by jimena && nacho on 09/05/17.
 //
 #include <zconf.h>
 #include <fstream>
 #include "GUIManager.h"
 
 GUIManager::GUIManager() {
+
     std::cout<<"GUI Created"<<std::endl;
+
+    board = new Board();
 
     backgroundTexture.loadFromFile("Resources/Background1.jpeg");
     backgroundSprite.setTexture(backgroundTexture);
@@ -28,7 +31,11 @@ GUIManager::GUIManager() {
     titleLabel.setPosition(50,50);
     titleLabel.setStyle(sf::Text::Italic);
 
+
     createQueens();
+
+    arduinoManager = new Serial("/dev/cu.usbserial-AL00VOSH");
+    usleep(10000000);
 }
 
 
@@ -44,7 +51,7 @@ int GUIManager::run(sf::RenderWindow &window) {
                 for (i = 0; i < 8; i++){
                     queens[i].setPosition(-80,-80);
                     for (j = 0; j < 8; j++){
-                        board[i][j] =0;
+                        board->getCell(i,j)->queen = 0;
                     }
                 }
                 return 0;
@@ -62,7 +69,7 @@ void GUIManager::moveQueens(sf::RenderWindow &window){
     int counter =0;
     for(int i = 0; i<8;i++){
         for(int j = 0; j<8;j++){
-            if(board[i][j] == 1){
+            if(board->hasQueen(i,j)){
                 queens[counter].setPosition(j*74+500, i*74+160);
                 counter++;
                 break;
@@ -70,21 +77,6 @@ void GUIManager::moveQueens(sf::RenderWindow &window){
         }
     }
     drawQueens(window);
-}
-
-bool GUIManager::isSafe(int board[8][8], int row, int col) {
-    int i, j;
-    for (i = 0; i < col; i++)
-        if (board[row][i])
-            return false;
-    for (i = row, j = col; i >= 0 && j>= 0; i--, j--)
-        if (board[i][j])
-            return false;
-
-    for (i = row, j = col; i < 8 && j >= 0; i++, j--)
-        if (board[i][j])
-            return false;
-    return true;
 }
 
 void printBoard(int board[8][8]){
@@ -98,34 +90,56 @@ void printBoard(int board[8][8]){
     }
 }
 
+bool GUIManager::isSafe(Board* board, int row, int col, sf::RenderWindow& window) {
+    int i, j;
+
+    for (i = 0; i < col; i++)
+        if (board->hasQueen(row, i)) {
+
+            return false;
+        }
+    for (i = row, j = col; i >= 0 && j>= 0; i--, j--)
+        if (board->hasQueen(i,j)){
+
+            return false;
+        }
+    for (i = row, j = col; i < 8 && j >= 0; i++, j--)
+        if (board->hasQueen(i,j)){
+            return false;
+        }
+    return true;
+}
+
 void GUIManager::writeBoard(){
     std::ofstream out;
     out.open("Movements.txt", std::ios::app);
     int i, j;
     for (i = 0; i < 8; i++){
         for (j = 0; j < 8; j++){
-            out << board[i][j] << " "; }
+            out << board->getCell(i,j)->queen << " "; }
         out << std:: endl;
     }
     out << std::endl;
 
 }
 
-bool GUIManager::solve8QueensAux(int board[8][8], int col, sf::RenderWindow &window) {
+bool GUIManager::solve8QueensAux(Board* board, int col, sf::RenderWindow& window) {
     if (col >= 8)
         return true;
     int i;
     for (i = 0; i < 8; i++){
-        if (isSafe(board, i, col)){
-            board[i][col] = 1;
-            printBoard(board);
+        if (isSafe(board, i, col, window)){
+            board->getCell(i, col)->queen = 1;
+//            printBoard(board);
             writeBoard();
+            arduinoManager->lightBoard(board);
             moveQueens(window);
-            usleep(500000);
+            usleep(1000000);
+            arduinoManager->readData();
             std::cout <<"nuevo movimiento"<<std::endl;
             if (solve8QueensAux(board, col + 1, window))
                 return true;
-            board[i][col] = 0;
+            board->getCell(i, col)->queen = 0;
         }
     }
     return false;
@@ -134,7 +148,7 @@ bool GUIManager::solve8QueensAux(int board[8][8], int col, sf::RenderWindow &win
 
 void GUIManager::solve8Queens(sf::RenderWindow &window){
 
-    if (solve8QueensAux(board, 0, window) == false){
+    if (solve8QueensAux(this->board, 0, window) == false){
         std::cout << "There's no solution";
     }
 
@@ -158,6 +172,7 @@ void GUIManager::drawQueens(sf::RenderWindow &window) {
     for(int i = 0; i<queens.size(); i++){
         window.draw(queens[i]);
     }
+
 
     window.display();
 }

@@ -7,9 +7,12 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <cmath>
 #include <iostream>
 #include "screen.h"
 #include "solver.h"
+#include "Board.h"
+#include "Serial.h"
 
 class GUIManager : public screen{
 public:
@@ -25,21 +28,15 @@ public:
 
 
     void solve8Queens(sf::RenderWindow &window);
-    bool isSafe(int board[8][8], int row, int col);
-    bool solve8QueensAux(int board[8][8], int col, sf::RenderWindow &window);
+    bool isSafe(Board* board, int row, int col, sf::RenderWindow &window);
+    bool solve8QueensAux(Board* board, int col, sf::RenderWindow &window);
 
     bool running = true;
     bool move_made = true;
 
 
-    int board[8][8] = {{0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0}};
+    Board* board;
+
 
 
     std::vector<sf::Sprite> queens;
@@ -55,6 +52,9 @@ public:
     sf::Text titleLabel;
     sf::Font cardsFont;
     sf::Music backgroundMusic;
+
+private:
+    Serial* arduinoManager;
 
 };
 
