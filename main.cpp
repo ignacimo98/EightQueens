@@ -11,6 +11,8 @@
 using namespace std;
 int main() {
 
+    std::cout<<(2.0/3.0)*255<<std::endl;
+
     Serial* Arduino = new Serial();
 
 
