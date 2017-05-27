@@ -40,6 +40,7 @@ GUIManager::GUIManager() {
 
 int GUIManager::run(sf::RenderWindow &window, std::string& port) {
     arduinoPort =  port;
+    std::cout << arduinoPort;
     arduinoManager = new Serial(arduinoPort);
     usleep(10000000);
     std::cout <<arduinoPort<<std::endl;
@@ -138,7 +139,7 @@ bool GUIManager::solve8QueensAux(Board* board, int col, sf::RenderWindow& window
             writeBoard();
             arduinoManager->lightBoard(board);
             moveQueens(window);
-            usleep(1000000);
+            usleep(500000);
             arduinoManager->readData();
             std::cout <<"nuevo movimiento"<<std::endl;
             if (solve8QueensAux(board, col + 1, window))
@@ -155,6 +156,8 @@ void GUIManager::solve8Queens(sf::RenderWindow &window){
     if (solve8QueensAux(this->board, 0, window) == false){
         std::cout << "There's no solution";
     }
+    else
+        arduinoManager->writeData("DONE--------", 16);
 
 }
 
